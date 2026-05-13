@@ -8,13 +8,6 @@ st.title("🧒 Analytica Kids")
 st.markdown("### Método de Nutrición Invisible")
 st.caption("Desarrollado por el Lic. Emanuel Viberti")
 
-# ESTRATEGIA DE VENTA
-st.info("🚀 **¿Querés 20 recetas exclusivas más?** Desbloqueá platos técnicos como Ñoquis Invisibles, Albóndigas de Ricota y la Guía de Marcas por solo **$10.000**.")
-
-# Aquí podés poner tu link de Mercado Pago o que te mande al WhatsApp
-if st.button("Comprar PDF Premium ($10.000)"):
-    st.write("🔗 Redirigiendo a WhatsApp para coordinar el pago...")
-
 st.divider()
 
 # BASE DE DATOS: Los 20 Platos Gratuitos
@@ -27,7 +20,7 @@ platos = {
     "Tostadas": ["Capa milimétrica de mantequilla de maní bajo el queso.", "Energía densa."],
     "Yogur Vainilla": ["Inulina o Psyllium en polvo (mezclar bien sin grumos).", "Salud intestinal y prebióticos."],
     "Polenta": ["Preparar con leche fortificada y queso reggianito fino.", "Calcio para los huesos."],
-    "Gelatina": ["Uso de jugos naturales de frutas colados (sin pulpa).", "Antioxidantes naturales."],
+    "Gelatina": ["Uso de jugos naturales de frutas colados (sin pulpa.", "Antioxidantes naturales."],
     "Panqueques": ["Sustitución parcial de leche por yogur griego natural.", "Proteína extra."],
     "Pizza (Muzza)": ["Puré de calabaza filtrado dentro de la salsa de tomate.", "Vitamina A."],
     "Salchichas": ["Hervir en caldo de carne real en lugar de agua.", "Hierro y B12."],
@@ -49,6 +42,17 @@ for nombre, detalles in platos.items():
         st.success(f"**¿Qué aporta?**\n\n{detalles[1]}")
         st.caption("💡 *Regla de Oro: Empezar con una pizca microscópica e ir subiendo gradualmente.*")
 
-# Contacto
+st.divider()
+
+# ESTRATEGIA DE VENTA (Al final de la lista)
+st.markdown("### 🚀 ¿Querés llevar la nutrición de tu hijo al siguiente nivel?")
+st.write("Desbloqueá las **20 Recetas Exclusivas** (como los Ñoquis Invisibles y Albóndigas de Ricota) más la **Guía Maestra de Marcas** recomendadas en Argentina.")
+
+# Botón destacado de compra
+if st.button("🔥 DESCARGAR GUÍA COMPLETA PDF ($10.000)"):
+    st.write("🔗 Redirigiendo para coordinar el pago...")
+
+# Contacto y Redes
 st.divider()
 st.markdown("📩 **Consultas Personalizadas:** [WhatsApp Lic. Viberti](https://wa.me/5491136768018)")
+st.caption("Instagram: @viberti.nutricion | X: @eevibe")
