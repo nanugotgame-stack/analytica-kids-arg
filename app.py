@@ -1,4 +1,5 @@
 import streamlit as st
+import urllib.parse
 
 # Configuración de la interfaz
 st.set_page_config(page_title="Analytica Kids - Argentina", page_icon="🧒")
@@ -20,7 +21,7 @@ platos = {
     "Tostadas": ["Capa milimétrica de mantequilla de maní bajo el queso.", "Energía densa."],
     "Yogur Vainilla": ["Inulina o Psyllium en polvo (mezclar bien sin grumos).", "Salud intestinal y prebióticos."],
     "Polenta": ["Preparar con leche fortificada y queso reggianito fino.", "Calcio para los huesos."],
-    "Gelatina": ["Uso de jugos naturales de frutas colados (sin pulpa.", "Antioxidantes naturales."],
+    "Gelatina": ["Uso de jugos naturales de frutas colados (sin pulpa).", "Antioxidantes naturales."],
     "Panqueques": ["Sustitución parcial de leche por yogur griego natural.", "Proteína extra."],
     "Pizza (Muzza)": ["Puré de calabaza filtrado dentro de la salsa de tomate.", "Vitamina A."],
     "Salchichas": ["Hervir en caldo de carne real en lugar de agua.", "Hierro y B12."],
@@ -44,15 +45,25 @@ for nombre, detalles in platos.items():
 
 st.divider()
 
-# ESTRATEGIA DE VENTA (Al final de la lista)
+# ESTRATEGIA DE VENTA
 st.markdown("### 🚀 ¿Querés llevar la nutrición de tu hijo al siguiente nivel?")
-st.write("Desbloqueá las **20 Recetas Exclusivas** (como los Ñoquis Invisibles y Albóndigas de Ricota) más la **Guía Maestra de Marcas** recomendadas en Argentina.")
+st.write("Desbloqueá las **20 Recetas Exclusivas** y la **Guía Maestra de Marcas** recomendadas en Argentina.")
 
-# Botón destacado de compra
 if st.button("🔥 DESCARGAR GUÍA COMPLETA PDF ($10.000)"):
     st.write("🔗 Redirigiendo para coordinar el pago...")
 
-# Contacto y Redes
 st.divider()
-st.markdown("📩 **Consultas Personalizadas:** [WhatsApp Lic. Viberti](https://wa.me/5491136768018)")
+
+# SECCIÓN DE CONTACTO PERSONALIZADO
+st.markdown("### 📩 Atención Individual")
+st.write("Si querés consultar por un plan 100% adaptado a tu hijo/a, no dudes en escribirme.")
+
+# Configuración del mensaje de WhatsApp
+mensaje_wa = "Hola Lic. Viberti, vi la app Analytica Kids y me gustaría consultar por un plan 100% adaptado para mi hijo/a."
+mensaje_encoded = urllib.parse.quote(mensaje_wa)
+url_whatsapp = f"https://wa.me/5491136768018?text={mensaje_encoded}"
+
+st.markdown(f"[**👉 Escribirme por WhatsApp ahora**]({url_whatsapp})")
+
+# Redes
 st.caption("Instagram: @viberti.nutricion | X: @eevibe")
