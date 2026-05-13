@@ -11,7 +11,7 @@ st.caption("Desarrollado por el Lic. Emanuel Viberti")
 
 st.divider()
 
-# BASE DE DATOS: Los 20 Platos Gratuitos
+# BASE DE DATOS: Los 20 Platos Gratuitos (Matriz Argentina)
 platos = {
     "Fideos Blancos": ["Albúmina en polvo disuelta en la manteca o aceite de servido.", "Proteína de alta calidad para el desarrollo muscular."],
     "Puré de Papas": ["Mezcla con 10% de coliflor blanca procesada a punto crema.", "Fibra y vitaminas esenciales."],
@@ -26,7 +26,7 @@ platos = {
     "Pizza (Muzza)": ["Puré de calabaza filtrado dentro de la salsa de tomate.", "Vitamina A."],
     "Salchichas": ["Hervir en caldo de carne real en lugar de agua.", "Hierro y B12."],
     "Carne Picada": ["Mezcla con zanahoria rallada ultra fina hasta que se deshaga.", "Betacarotenos."],
-    "Manzana Pelada": ["Almíbar ligero de miel y limón para evitar que se ponga marrón.", "Vitamina C."],
+    "Manzana Pelada": ["Almíbar ligero de miel y limón para evitar la oxidación.", "Vitamina C."],
     "Banana": ["Pizca de coco rallado extra fino.", "Potasio."],
     "Huevo Duro": ["Procesar la yema con una pizca de palta para hacer una crema.", "Grasas DHA."],
     "Sopa de Letras": ["Base de caldo concentrado de vegetales blancos.", "Minerales."],
@@ -36,7 +36,7 @@ platos = {
 }
 
 # Renderizado de la lista
-st.write("Seleccioná el plato seguro que tu hijo ya acepta:")
+st.write("Seleccioná el plato seguro que tu hijo ya acepta para ver cómo enriquecerlo:")
 for nombre, detalles in platos.items():
     with st.expander(f"🍴 {nombre}"):
         st.markdown(f"**¿Cómo enriquecerlo?**\n\n{detalles[0]}")
@@ -45,25 +45,30 @@ for nombre, detalles in platos.items():
 
 st.divider()
 
-# ESTRATEGIA DE VENTA
-st.markdown("### 🚀 ¿Querés llevar la nutrición de tu hijo al siguiente nivel?")
-st.write("Desbloqueá las **20 Recetas Exclusivas** y la **Guía Maestra de Marcas** recomendadas en Argentina.")
+# ESTRATEGIA DE VENTA: PDF PREMIUM
+st.markdown("### 🚀 ¿Querés llevar la nutrición al siguiente nivel?")
+st.write("Desbloqueá la **Guía Completa PDF** con 40 platos técnicos (Ñoquis invisibles, albóndigas de ricota y más) y la lista de marcas recomendadas en Argentina.")
 
-if st.button("🔥 DESCARGAR GUÍA COMPLETA PDF ($10.000)"):
-    st.write("🔗 Redirigiendo para coordinar el pago...")
+# Tu Link de Mercado Pago configurado
+url_mercado_pago = "https://mpago.la/1hsixwg"
+
+st.link_button("🔥 COMPRAR GUÍA COMPLETA ($10.000)", url_mercado_pago)
+st.info("Al completar el pago, el sistema te redirigirá a mi WhatsApp para enviarte el archivo a tu email.")
 
 st.divider()
 
-# SECCIÓN DE CONTACTO PERSONALIZADO
-st.markdown("### 📩 Atención Individual")
+# ATENCIÓN INDIVIDUAL
+st.markdown("### 📩 ¿Necesitás un plan a medida?")
 st.write("Si querés consultar por un plan 100% adaptado a tu hijo/a, no dudes en escribirme.")
 
-# Configuración del mensaje de WhatsApp
-mensaje_wa = "Hola Lic. Viberti, vi la app Analytica Kids y me gustaría consultar por un plan 100% adaptado para mi hijo/a."
-mensaje_encoded = urllib.parse.quote(mensaje_wa)
-url_whatsapp = f"https://wa.me/5491136768018?text={mensaje_encoded}"
+# Mensaje para consulta de plan
+msg_consulta = "Hola Lic. Viberti, vi la app Analytica Kids y me gustaría consultar por un plan 100% adaptado para mi hijo/a."
+msg_encoded = urllib.parse.quote(msg_consulta)
+url_wa_consulta = f"https://wa.me/5491136768018?text={msg_encoded}"
 
-st.markdown(f"[**👉 Escribirme por WhatsApp ahora**]({url_whatsapp})")
+st.markdown(f"[**👉 Escribirme por WhatsApp ahora**]({url_wa_consulta})")
 
-# Redes
+# Redes Sociales
+st.divider()
 st.caption("Instagram: @viberti.nutricion | X: @eevibe")
+st.caption("© 2026 Analytica - Todos los derechos reservados")
